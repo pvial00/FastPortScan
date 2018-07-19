@@ -35,9 +35,8 @@ class FastPortScan:
         openports = []
         for port in ports:
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            s.settimeout(2)
+            s.settimeout(self.timeout)
             try:
-               s.settimeout(0.5)
                s.connect((host, port))
                sys.stdout.write("Detected open TCP port: %i" % port)
                sys.stdout.write("\n")
@@ -52,9 +51,8 @@ class FastPortScan:
         openports = []
         for port in ports:
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            s.settimeout(2)
+            s.settimeout(self.timeout)
             try:
-               s.settimeout(self.timeout)
                s.connect((host, port))
                #sys.stdout.write("Detected open TCP port: %i" % port)
                #sys.stdout.write("\n")
