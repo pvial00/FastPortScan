@@ -1,5 +1,6 @@
 # FastPortScan
 Threaded TCP port scanner
+
 6 minutes 28 seconds to scan all localhost TCP ports with default settings
 
 # Usage:
@@ -10,6 +11,6 @@ or
 
 fps.scan("localhost", range(65536))
 
-or slow sequential scan which returns a list of ports
+or slow sequential scan which returns a list of open ports
 
 openports = fps.slowscan("localhost", range(65536))
